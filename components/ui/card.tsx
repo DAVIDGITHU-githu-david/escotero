@@ -1,22 +1,17 @@
 import React from "react";
 
-export function Card({ children }) {
-    return <div style={{
-        border: "1px solid #ccc", 
-        padding: "20px", 
-        borderRadius: "8px", 
-        boxShadow: "2px 2px 10px rgba(0,0,0,0.1)"
-    }}>{children}</div>;
+export function Card({ children, className = "" }) {
+    return <div className={`border border-gray-300 p-4 rounded-lg shadow-md ${className}`}>{children}</div>;
 }
 
-export function CardHeader({ children }) {
-    return <h2 style={{ marginBottom: "10px" }}>{children}</h2>;
+export function CardHeader({ children, className = "" }) {
+    return <div className={`mb-4 ${className}`}>{children}</div>;
 }
 
-export function CardTitle({ children }) {
-    return <h3 style={{ marginBottom: "10px" }}>{children}</h3>;
+export function CardTitle({ children, className = "" }) {
+    return <h2 className={`text-lg font-bold ${className}`}>{children}</h2>;
 }
 
-export function CardContent({ children }) {
-    return <div>{children}</div>;
+export function CardContent({ children, className = "" }) {
+    return <div className={className}>{children}</div>;
 }
