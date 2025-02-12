@@ -1,17 +1,16 @@
 import React from "react";
 
-export function Button({ children, onClick }) {
+interface ButtonProps {
+    children: React.ReactNode;
+    onClick: () => void;
+    className?: string;
+}
+
+export function Button({ children, onClick, className = "" }: ButtonProps) {
     return (
         <button
             onClick={onClick}
-            style={{
-                background: "#0070f3",
-                color: "white",
-                border: "none",
-                padding: "10px 20px",
-                borderRadius: "5px",
-                cursor: "pointer"
-            }}
+            className={`bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 ${className}`}
         >
             {children}
         </button>
