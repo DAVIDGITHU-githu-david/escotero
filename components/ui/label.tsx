@@ -1,5 +1,9 @@
 import React from "react";
 
-export function Label({ children }) {
-    return <label style={{ fontWeight: "bold", display: "block", marginBottom: "5px" }}>{children}</label>;
+export function Label({ children, htmlFor, className = "" }) {
+    return (
+        <label htmlFor={htmlFor} className={`font-bold block mb-2 ${className}`}>
+            {children}
+        </label>
+    );
 }
